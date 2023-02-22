@@ -1,0 +1,38 @@
+ALGORITHM algorithm_2
+VAR
+    set1 :  ARRAY_OF INTEGER[4] ;
+	set2 :  ARRAY_OF INTEGER[5] ;
+	 sum : INTEGER :=0;
+    i,j : INTEGER;
+    somme : BOOLEAN :=false;
+BEGIN
+	set1 := {3,1,7,9} ;
+	set2 := {2,4,1,9,3} ;
+
+    FOR i FROM 0 TO set1.length  DO
+        FOR j FROM 0 TO set2.length  DO
+            IF ( set1[i] = set2[j] ) THEN
+            somme := true;           
+            End if
+        END_FOR
+
+    IF (somme := false) THEN
+        sum := sum + set1[i] ;
+    END_IF
+    somme := false;
+    END_FOR
+
+    FOR i FROM 0 To set2.length DO
+        FOR j FROM 0 TO set1.length DO
+            IF ( set2[i] = set1[j] ) THEN
+            somme := true;
+            End if
+        END_FOR
+
+    IF (somme := false) THEN 
+        sum := sum + set2[i] ;
+    END_IF
+        somme := false;
+    END_FOR
+    
+END 
